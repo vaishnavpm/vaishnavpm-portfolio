@@ -1,0 +1,231 @@
+{
+  "profile": {
+    "name": "Vaishnav P M",
+    "shortName": "Vaishnav",
+    "tagline": "I build backend-heavy SaaS — APIs, auth systems, and real-time features that scale.",
+    "role": "Full Stack Engineer",
+    "specialization": "NestJS · Node.js · React · PostgreSQL",
+    "location": "Trivandrum, Kerala, India",
+    "yearsOfExperience": "3+",
+    "bio": "Full Stack Engineer with 3+ years shipping production SaaS and CRM platforms. I specialise in backend architecture — REST APIs, multi-tenant systems, authentication flows, and real-time features. I own features end-to-end, from database design to the React UI.",
+    "avatarSvg": "/assets/img/avatar.png",
+    "resumeUrl": "/resume.pdf",
+    "social": {
+      "github": "https://github.com/vaishnavpm",
+      "linkedin": "https://linkedin.com/in/vaishnavpm",
+      "instagram": "https://www.instagram.com/_lonew0lf_",
+      "email": "vaishnavpm107@gmail.com",
+      "phone": "+917012304131",
+      "website": ""
+    }
+  },
+  "skills": {
+    "categories": [
+      {
+        "name": "Languages",
+        "items": [
+          "JavaScript",
+          "TypeScript"
+        ]
+      },
+      {
+        "name": "Frontend",
+        "items": [
+          "React.js",
+          "Next.js",
+          "React Native",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "Redux",
+          "React Query"
+        ]
+      },
+      {
+        "name": "Backend",
+        "items": [
+          "Node.js",
+          "NestJS",
+          "REST API Design",
+          "WebSockets",
+          "Socket.IO",
+          "Bull Queues"
+        ]
+      },
+      {
+        "name": "Databases & Caching",
+        "items": [
+          "PostgreSQL",
+          "Oracle",
+          "Redis",
+          "SQL Query Optimisation",
+          "Data Modelling"
+        ]
+      },
+      {
+        "name": "Security",
+        "items": [
+          "JWT",
+          "LDAP / Active Directory",
+          "Google OAuth",
+          "RBAC",
+          "AES-256 Encryption"
+        ]
+      },
+      {
+        "name": "Tools & Practices",
+        "items": [
+          "Git",
+          "Docker",
+          "CI/CD",
+          "Agile / Scrum",
+          "Production Debugging"
+        ]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Enfin Technologies",
+      "role": "Software Engineer",
+      "period": "2024 — Present",
+      "location": "Trivandrum",
+      "summary": "Building backend-heavy SaaS and CRM modules for enterprise clients, including a multi-tenant ticketing and asset management platform.",
+      "highlights": [
+        "Architected a multi-tenant ticketing platform with organisation-scoped data access and RBAC — supporting concurrent enterprise clients without data leakage.",
+        "Implemented JWT, LDAP/Active Directory, and Google OAuth authentication flows with secure token handling, reducing auth-related support tickets.",
+        "Integrated Redis and Bull-based queue processing for async email, SMS, and in-app notification delivery, decoupling notification load from the main API.",
+        "Built real-time notification features using Socket.IO and WebSockets, enabling live status updates across the platform.",
+        "Optimised PostgreSQL queries and caching strategies, improving API response times and backend reliability for production workloads.",
+        "Collaborated directly with US-based clients across sprint demos, feature validation, and production issue resolution."
+      ]
+    },
+    {
+      "company": "BairuhaTech",
+      "role": "Full Stack Developer",
+      "period": "2023 — 2024",
+      "location": "Calicut",
+      "summary": "Delivered 6+ web and mobile applications across booking, CRM, and commerce domains using React, React Native, NestJS, and PostgreSQL.",
+      "highlights": [
+        "Delivered 6+ production web and mobile apps end-to-end, covering frontend, backend APIs, and database workflows.",
+        "Designed backend services following clean architecture principles, reducing defect rework and improving maintainability across projects.",
+        "Integrated Firebase Authentication and OTP-based login systems for mobile-first applications.",
+        "Optimised PostgreSQL and Oracle queries, improving query execution performance and API response efficiency."
+      ]
+    },
+    {
+      "company": "CMS IT Services Pvt Ltd",
+      "role": "IT Support Engineer",
+      "period": "2020 — 2021",
+      "location": "Cochin",
+      "summary": "Provided L2 application and infrastructure support for enterprise environments serving 100+ daily users.",
+      "highlights": [
+        "Supported 100+ daily users across application, network, and server incidents while maintaining high SLA compliance.",
+        "Resolved system and infrastructure issues in enterprise environments, building a strong foundation in production operations."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "enterprise-ticketing",
+      "title": "Enterprise Ticketing & Asset Management",
+      "subtitle": "Multi-tenant SaaS platform for enterprise IT operations",
+      "description": "A multi-tenant SaaS platform handling ticketing, asset tracking, workflow automation, and RBAC-based access control for enterprise clients. Built with NestJS, PostgreSQL, Redis, and Socket.IO.",
+      "stack": [
+        "NestJS",
+        "React.js",
+        "PostgreSQL",
+        "Redis",
+        "Socket.IO",
+        "Bull",
+        "JWT",
+        "TypeScript"
+      ],
+      "role": "Full Stack Engineer",
+      "year": "2024",
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "marketing-research-saas",
+      "title": "Marketing Research SaaS Platform",
+      "subtitle": "Multi-tenant workspace for research teams",
+      "description": "A multi-tenant marketing research platform where organisations manage their own workspace, users, projects, and studies. Built SSR-enabled Next.js pages with meeting, calendar, polls, and takeaway interfaces.",
+      "stack": [
+        "Next.js",
+        "React.js",
+        "Redux",
+        "TypeScript",
+        "PostgreSQL",
+        "NestJS"
+      ],
+      "role": "Frontend & Backend Engineer",
+      "year": "2024",
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "travel-crm",
+      "title": "Travel CRM",
+      "subtitle": "Itinerary and customer workflow management",
+      "description": "Full-stack CRM for travel operations — itinerary management, dynamic scheduling, customer workflows, and package management with reusable UI components and API integrations.",
+      "stack": [
+        "React.js",
+        "NestJS",
+        "PostgreSQL",
+        "TypeScript"
+      ],
+      "role": "Full Stack Developer",
+      "year": "2023",
+      "link": "",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "kenya-airways",
+      "title": "Kenya Airways — Staff Booking Portal",
+      "subtitle": "Internal booking and scheduling system",
+      "description": "Staff-facing portal for Kenya Airways with booking workflows, scheduling features, and optimised relational database interactions for operational reliability.",
+      "stack": [
+        "React.js",
+        "NestJS",
+        "PostgreSQL",
+        "TypeScript"
+      ],
+      "role": "Full Stack Developer",
+      "year": "2023",
+      "link": "",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "commerce-platforms",
+      "title": "Commerce Platforms — NextME / Rockana",
+      "subtitle": "E-commerce and customer management systems",
+      "description": "Frontend modules, backend APIs, and database integrations for commerce and customer management. Covered product listings, order workflows, and customer operations.",
+      "stack": [
+        "React.js",
+        "React Native",
+        "NestJS",
+        "PostgreSQL",
+        "Firebase"
+      ],
+      "role": "Full Stack Developer",
+      "year": "2023",
+      "link": "",
+      "image": "",
+      "highlight": false
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology — Electronics & Communication Engineering",
+      "institution": "Vimal Jyothi Engineering College",
+      "university": "APJ Abdul Kalam Technological University",
+      "year": "2020",
+      "gpa": "6.81"
+    }
+  ],
+  "testimonials": []
+}
