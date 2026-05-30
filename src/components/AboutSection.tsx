@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Briefcase, Code2, Layers3 } from 'lucide-react'
 import { usePortfolio } from '@/hooks/usePortfolio'
@@ -17,6 +18,19 @@ export default function AboutSection() {
   const linkedinVanity = profile.social.linkedin
     ? profile.social.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '')
     : ''
+
+  useEffect(() => {
+    if (!linkedinVanity) return
+    // Inject script after the badge div is in the DOM so LinkedIn finds it immediately
+    const SCRIPT_ID = 'linkedin-badge-script'
+    if (document.getElementById(SCRIPT_ID)) return
+    const script = document.createElement('script')
+    script.id = SCRIPT_ID
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+  }, [linkedinVanity])
 
   return (
     <section id="about" className="py-28 border-t border-white/[0.06]">
