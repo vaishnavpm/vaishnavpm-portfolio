@@ -13,8 +13,8 @@ function ProjectCard({ project, cardIndex }: { project: ProjectItem; cardIndex: 
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: cardIndex * 0.07 }}
       className={`group relative flex flex-col p-6 rounded-xl border transition-all duration-300 h-full ${project.highlight
-          ? 'bg-white/[0.04] border-white/10 hover:border-white/[0.18]'
-          : 'bg-white/[0.02] border-white/[0.06] hover:border-white/10'
+        ? 'bg-white/[0.04] border-white/10 hover:border-white/[0.18]'
+        : 'bg-white/[0.02] border-white/[0.06] hover:border-white/10'
         }`}
     >
       {/* Card number */}
@@ -101,7 +101,7 @@ export default function ProjectsSection() {
           className="mb-12"
         >
           <p className="text-xs font-medium text-text-muted mb-2 tracking-[0.2em] uppercase">
-            04 / Projects
+            Projects
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white">Selected Work</h2>
         </motion.div>

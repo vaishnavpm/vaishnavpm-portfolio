@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Briefcase, Code2 } from 'lucide-react'
+import { MapPin, Briefcase, Code2, Layers3 } from 'lucide-react'
 import { usePortfolio } from '@/hooks/usePortfolio'
 
 export default function AboutSection() {
@@ -10,8 +10,13 @@ export default function AboutSection() {
   const stats = [
     { icon: <Briefcase size={15} />, label: 'Experience', value: `${profile.yearsOfExperience} Years` },
     { icon: <Code2 size={15} />, label: 'Role', value: profile.role },
+    { icon: <Layers3 size={15} />, label: 'Core Stack', value: profile.specialization },
     { icon: <MapPin size={15} />, label: 'Location', value: profile.location },
   ]
+
+  const linkedinVanity = profile.social.linkedin
+    ? profile.social.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '')
+    : ''
 
   return (
     <section id="about" className="py-28 border-t border-white/[0.06]">
@@ -29,21 +34,25 @@ export default function AboutSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-[1fr_320px] gap-12 items-start">
+        {/* 3-column grid: bio | stats | badge */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_240px_220px] gap-8 items-start">
+
+          {/* Col 1: Bio — spans both sm cols so badge doesn't collapse awkwardly */}
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-text-secondary text-lg leading-relaxed"
+            className="text-text-secondary text-lg leading-relaxed sm:col-span-2 lg:col-span-1"
             style={{ wordBreak: 'normal', overflowWrap: 'normal' }}
           >
             {profile.bio}
           </motion.p>
 
+          {/* Col 2: Stats */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col gap-3"
@@ -63,6 +72,34 @@ export default function AboutSection() {
               </div>
             ))}
           </motion.div>
+
+          {/* Col 3: LinkedIn badge */}
+          {linkedinVanity && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div
+                className="badge-base LI-profile-badge"
+                data-locale="en_US"
+                data-size="medium"
+                data-theme="dark"
+                data-type="VERTICAL"
+                data-vanity={linkedinVanity}
+                data-version="v1"
+                suppressHydrationWarning
+              >
+                <a
+                  className="badge-base__link LI-simple-link"
+                  href={profile.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

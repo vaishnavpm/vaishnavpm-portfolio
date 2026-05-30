@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Kanit } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import portfolioData from '@/data/portfolio.json'
 
@@ -36,6 +37,10 @@ export default function RootLayout({
     <html lang="en" className={kanit.variable}>
       <body className="bg-background font-kanit text-white antialiased">
         {children}
+        <Script
+          src="https://platform.linkedin.com/badges/js/profile.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )
