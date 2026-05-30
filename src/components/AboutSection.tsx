@@ -1,9 +1,48 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Briefcase, Code2, Layers3 } from 'lucide-react'
 import { usePortfolio } from '@/hooks/usePortfolio'
+
+function LinkedInBadge({ vanity, href }: { vanity: string; href: string }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container || !vanity) return
+
+    // Write badge HTML directly into the container — React never touches these children,
+    // so LinkedIn's script is free to replace them with its iframe without conflict.
+    container.innerHTML = `
+      <div
+        class="badge-base LI-profile-badge"
+        data-locale="en_US"
+        data-size="medium"
+        data-theme="dark"
+        data-type="VERTICAL"
+        data-vanity="${vanity}"
+        data-version="v1"
+      >
+        <a class="badge-base__link LI-simple-link" href="${href}"></a>
+      </div>
+    `
+
+    // Always remove + re-inject the script so it re-executes and scans for the new div.
+    // Leaving the old script in place means it won't scan again.
+    const old = document.getElementById('li-badge-script')
+    if (old) old.remove()
+
+    const script = document.createElement('script')
+    script.id = 'li-badge-script'
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js'
+    script.async = true
+    document.body.appendChild(script)
+  }, [vanity, href])
+
+  // React only manages this empty wrapper — LinkedIn owns everything inside it.
+  return <div ref={containerRef} />
+}
 
 export default function AboutSection() {
   const { profile } = usePortfolio()
@@ -18,19 +57,6 @@ export default function AboutSection() {
   const linkedinVanity = profile.social.linkedin
     ? profile.social.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '')
     : ''
-
-  useEffect(() => {
-    if (!linkedinVanity) return
-    // Inject script after the badge div is in the DOM so LinkedIn finds it immediately
-    const SCRIPT_ID = 'linkedin-badge-script'
-    if (document.getElementById(SCRIPT_ID)) return
-    const script = document.createElement('script')
-    script.id = SCRIPT_ID
-    script.src = 'https://platform.linkedin.com/badges/js/profile.js'
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
-  }, [linkedinVanity])
 
   return (
     <section id="about" className="py-28 border-t border-white/[0.06]">
@@ -51,7 +77,7 @@ export default function AboutSection() {
         {/* 3-column grid: bio | stats | badge */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_240px_220px] gap-8 items-start">
 
-          {/* Col 1: Bio — spans both sm cols so badge doesn't collapse awkwardly */}
+          {/* Col 1: Bio */}
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -87,7 +113,7 @@ export default function AboutSection() {
             ))}
           </motion.div>
 
-          {/* Col 3: LinkedIn badge */}
+          {/* Col 3: LinkedIn badge — rendered outside React's DOM control */}
           {linkedinVanity && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -95,23 +121,7 @@ export default function AboutSection() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div
-                className="badge-base LI-profile-badge"
-                data-locale="en_US"
-                data-size="medium"
-                data-theme="dark"
-                data-type="VERTICAL"
-                data-vanity={linkedinVanity}
-                data-version="v1"
-                suppressHydrationWarning
-              >
-                <a
-                  className="badge-base__link LI-simple-link"
-                  href={profile.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              </div>
+              <LinkedInBadge vanity={linkedinVanity} href={profile.social.linkedin} />
             </motion.div>
           )}
         </div>
