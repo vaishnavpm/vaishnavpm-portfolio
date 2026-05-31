@@ -1,48 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Briefcase, Code2, Layers3 } from 'lucide-react'
 import { usePortfolio } from '@/hooks/usePortfolio'
-
-function LinkedInBadge({ vanity, href }: { vanity: string; href: string }) {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container || !vanity) return
-
-    // Write badge HTML directly into the container — React never touches these children,
-    // so LinkedIn's script is free to replace them with its iframe without conflict.
-    container.innerHTML = `
-      <div
-        class="badge-base LI-profile-badge"
-        data-locale="en_US"
-        data-size="medium"
-        data-theme="dark"
-        data-type="VERTICAL"
-        data-vanity="${vanity}"
-        data-version="v1"
-      >
-        <a class="badge-base__link LI-simple-link" href="${href}"></a>
-      </div>
-    `
-
-    // Always remove + re-inject the script so it re-executes and scans for the new div.
-    // Leaving the old script in place means it won't scan again.
-    const old = document.getElementById('li-badge-script')
-    if (old) old.remove()
-
-    const script = document.createElement('script')
-    script.id = 'li-badge-script'
-    script.src = 'https://platform.linkedin.com/badges/js/profile.js'
-    script.async = true
-    document.body.appendChild(script)
-  }, [vanity, href])
-
-  // React only manages this empty wrapper — LinkedIn owns everything inside it.
-  return <div ref={containerRef} />
-}
 
 export default function AboutSection() {
   const { profile } = usePortfolio()
@@ -53,10 +13,6 @@ export default function AboutSection() {
     { icon: <Layers3 size={15} />, label: 'Core Stack', value: profile.specialization },
     { icon: <MapPin size={15} />, label: 'Location', value: profile.location },
   ]
-
-  const linkedinVanity = profile.social.linkedin
-    ? profile.social.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '')
-    : ''
 
   return (
     <section id="about" className="py-28 border-t border-white/[0.06]">
@@ -74,25 +30,21 @@ export default function AboutSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
         </motion.div>
 
-        {/* 3-column grid: bio | stats | badge */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_240px_220px] gap-8 items-start">
-
-          {/* Col 1: Bio */}
+        <div className="grid md:grid-cols-[1fr_320px] gap-12 items-start">
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-text-secondary text-lg leading-relaxed sm:col-span-2 lg:col-span-1"
+            className="text-text-secondary text-lg leading-relaxed"
             style={{ wordBreak: 'normal', overflowWrap: 'normal' }}
           >
             {profile.bio}
           </motion.p>
 
-          {/* Col 2: Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col gap-3"
@@ -112,18 +64,6 @@ export default function AboutSection() {
               </div>
             ))}
           </motion.div>
-
-          {/* Col 3: LinkedIn badge — rendered outside React's DOM control */}
-          {linkedinVanity && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <LinkedInBadge vanity={linkedinVanity} href={profile.social.linkedin} />
-            </motion.div>
-          )}
         </div>
       </div>
     </section>
