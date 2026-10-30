@@ -5,7 +5,7 @@ import { MapPin, Briefcase, Code2, Layers3 } from 'lucide-react'
 import { usePortfolio } from '@/hooks/usePortfolio'
 
 export default function AboutSection() {
-  const { profile } = usePortfolio()
+  const { profile, education, certifications } = usePortfolio()
 
   const stats = [
     { icon: <Briefcase size={15} />, label: 'Experience', value: `${profile.yearsOfExperience} Years` },
@@ -64,6 +64,26 @@ export default function AboutSection() {
               </div>
             ))}
           </motion.div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
+          <div className="p-6 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+            <h3 className="text-lg font-semibold text-white mb-4">Education</h3>
+            {education.map((item) => (
+              <div key={`${item.institution}-${item.degree}`}>
+                <p className="text-sm text-text-secondary leading-relaxed">{item.degree}</p>
+                <p className="text-sm text-text-muted mt-2">{item.institution}</p>
+                <p className="text-sm text-text-muted mt-1">{item.university}</p>
+              </div>
+            ))}
+          </div>
+          <div className="p-6 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+            <h3 className="text-lg font-semibold text-white mb-4">Certifications</h3>
+            <ul className="list-disc pl-4 space-y-2 text-sm text-text-secondary">
+              {certifications.map((certification) => (
+                <li key={certification}>{certification}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

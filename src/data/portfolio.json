@@ -2,12 +2,12 @@
   "profile": {
     "name": "Vaishnav P M",
     "shortName": "Vaishnav",
-    "tagline": "I build backend-heavy SaaS — APIs, auth systems, and real-time features that scale.",
-    "role": "Full Stack Engineer",
-    "specialization": "NestJS · Node.js · React · PostgreSQL",
-    "location": "Trivandrum, Kerala, India",
+    "tagline": "I build production web and mobile applications with React, Next.js, Node.js, and TypeScript.",
+    "role": "Full Stack Developer",
+    "specialization": "React.js · Next.js · Node.js · TypeScript",
+    "location": "Bengaluru, India",
     "yearsOfExperience": "3+",
-    "bio": "Full Stack Engineer with 3+ years shipping production SaaS and CRM platforms. I specialise in backend architecture — REST APIs, multi-tenant systems, authentication flows, and real-time features. I own features end-to-end, from database design to the React UI.",
+    "bio": "Full Stack Developer with 3+ years of experience developing and maintaining production web and mobile applications. I build responsive interfaces, reusable components, server-side applications, and database-backed workflows using React.js, Next.js, Node.js, NestJS, TypeScript, and PostgreSQL. My work spans authentication, third-party integrations, asynchronous processing, performance optimization, and production support, from business requirements through release.",
     "avatarSvg": "/assets/img/avatar.png",
     "resumeUrl": "/resume.pdf",
     "social": {
@@ -22,63 +22,101 @@
   "skills": {
     "categories": [
       {
-        "name": "Languages",
-        "items": [
-          "JavaScript",
-          "TypeScript"
-        ]
-      },
-      {
         "name": "Frontend",
         "items": [
           "React.js",
           "Next.js",
           "React Native",
+          "TypeScript",
+          "JavaScript (ES6+)",
+          "HTML5",
+          "CSS3",
           "Tailwind CSS",
+          "Bootstrap",
           "shadcn/ui",
+          "Ant Design",
           "Redux",
-          "React Query"
+          "Context API",
+          "React Query / TanStack Query",
+          "Axios",
+          "Vite",
+          "SSR / SSG"
         ]
       },
       {
         "name": "Backend",
         "items": [
           "Node.js",
+          "Express.js",
           "NestJS",
-          "REST API Design",
-          "WebSockets",
-          "Socket.IO",
-          "Bull Queues"
+          "REST APIs",
+          "Microservices",
+          "Swagger / OpenAPI",
+          "WebSockets / Socket.IO",
+          "WebRTC",
+          "Asynchronous Processing",
+          "Redis Queues"
         ]
       },
       {
         "name": "Databases & Caching",
         "items": [
           "PostgreSQL",
-          "Oracle",
+          "MySQL",
+          "MongoDB",
           "Redis",
-          "SQL Query Optimisation",
-          "Data Modelling"
+          "SQL",
+          "Database & Schema Design",
+          "Query Optimization",
+          "Stored Procedures",
+          "Data Modelling",
+          "Caching"
         ]
       },
       {
-        "name": "Security",
+        "name": "Security & Integrations",
         "items": [
           "JWT",
-          "LDAP / Active Directory",
-          "Google OAuth",
+          "OAuth",
           "RBAC",
-          "AES-256 Encryption"
+          "API Security",
+          "Input Validation",
+          "Firebase Authentication",
+          "LDAP",
+          "Third-party APIs",
+          "Video & Streaming Integrations",
+          "AI API Integration"
         ]
       },
       {
-        "name": "Tools & Practices",
+        "name": "Cloud & DevOps",
         "items": [
-          "Git",
+          "AWS",
+          "S3",
+          "Microsoft Azure",
+          "Azure App Service",
+          "Azure DevOps CI/CD",
           "Docker",
-          "CI/CD",
+          "Serverless Framework",
+          "Git",
+          "GitHub",
+          "Bitbucket"
+        ]
+      },
+      {
+        "name": "Tools & Engineering Practices",
+        "items": [
+          "NPM",
+          "Postman",
+          "VS Code",
           "Agile / Scrum",
-          "Production Debugging"
+          "Code Reviews",
+          "Testing Support",
+          "Debugging",
+          "Root-cause Analysis",
+          "Performance Optimization",
+          "Technical Documentation",
+          "AI-assisted Development"
         ]
       }
     ]
@@ -87,89 +125,119 @@
     {
       "company": "Enfin Technologies",
       "role": "Software Engineer",
-      "period": "2024 — Present",
-      "location": "Trivandrum",
-      "summary": "Building backend-heavy SaaS and CRM modules for enterprise clients, including a multi-tenant ticketing and asset management platform.",
+      "period": "November 2024 — June 2026",
+      "location": "Trivandrum, Kerala",
+      "summary": "Developed and maintained 30+ production modules across 12 release cycles for a multi-tenant marketing research SaaS platform.",
       "highlights": [
-        "Architected a multi-tenant ticketing platform with organisation-scoped data access and RBAC — supporting concurrent enterprise clients without data leakage.",
-        "Implemented JWT, LDAP/Active Directory, and Google OAuth authentication flows with secure token handling, reducing auth-related support tickets.",
-        "Integrated Redis and Bull-based queue processing for async email, SMS, and in-app notification delivery, decoupling notification load from the main API.",
-        "Built real-time notification features using Socket.IO and WebSockets, enabling live status updates across the platform.",
-        "Optimised PostgreSQL queries and caching strategies, improving API response times and backend reliability for production workloads.",
-        "Collaborated directly with US-based clients across sprint demos, feature validation, and production issue resolution."
+        "Built responsive, reusable React.js and Next.js interfaces for meetings, calendars, discussion guides, polls, takeaways, reporting, and AI-enabled research workflows.",
+        "Developed Node.js/NestJS applications and microservices, designed and documented 60+ REST API endpoints, and implemented PostgreSQL workflows, JWT, RBAC, input validation, and Redis-backed queues.",
+        "Improved application performance by approximately 25% / 200 ms through React Query caching and invalidation, fewer repeated API requests, and Vite bundle optimization.",
+        "Integrated video, streaming, third-party, and AI analysis services; resolved 20+ defects and collaborated on code reviews, testing, documentation, and CI/CD releases."
       ]
     },
     {
-      "company": "BairuhaTech",
+      "company": "Bairuha Tech",
       "role": "Full Stack Developer",
-      "period": "2023 — 2024",
-      "location": "Calicut",
-      "summary": "Delivered 6+ web and mobile applications across booking, CRM, and commerce domains using React, React Native, NestJS, and PostgreSQL.",
+      "period": "August 2023 — November 2024",
+      "location": "Calicut, Kerala",
+      "summary": "Built and shipped 4+ production web applications across event registration, ticketing, e-commerce, and CRM.",
       "highlights": [
-        "Delivered 6+ production web and mobile apps end-to-end, covering frontend, backend APIs, and database workflows.",
-        "Designed backend services following clean architecture principles, reducing defect rework and improving maintainability across projects.",
-        "Integrated Firebase Authentication and OTP-based login systems for mobile-first applications.",
-        "Optimised PostgreSQL and Oracle queries, improving query execution performance and API response efficiency."
+        "Developed responsive React.js interfaces and Node.js/Express.js services with PostgreSQL, REST APIs, authentication, and third-party integrations.",
+        "Reduced deployment time from 30 minutes to 10 minutes with Azure DevOps CI/CD pipelines for automated build, test, and deployment.",
+        "Resolved 50+ production incidents through application debugging, API investigation, root-cause analysis, and infrastructure coordination.",
+        "Shipped 10+ iOS and Android releases using React Native and Firebase Authentication; reviewed code and mentored 3+ interns."
       ]
     },
     {
-      "company": "CMS IT Services Pvt Ltd",
-      "role": "IT Support Engineer",
-      "period": "2020 — 2021",
-      "location": "Cochin",
-      "summary": "Provided L2 application and infrastructure support for enterprise environments serving 100+ daily users.",
+      "company": "CMS IT Services",
+      "role": "Information Technology Support Engineer",
+      "period": "March 2020 — May 2021",
+      "location": "Kochi, Kerala",
+      "summary": "Provided L2 application, network, and server support for enterprise environments.",
       "highlights": [
-        "Supported 100+ daily users across application, network, and server incidents while maintaining high SLA compliance.",
-        "Resolved system and infrastructure issues in enterprise environments, building a strong foundation in production operations."
+        "Maintained 95% incident closure within SLA through structured troubleshooting and coordination with infrastructure teams."
       ]
     }
   ],
   "projects": [
     {
+      "id": "marketing-research-saas",
+      "title": "Marketing Research SaaS Platform",
+      "subtitle": "Multi-tenant workspace for research teams",
+      "description": "Developed Next.js and React features for a multi-tenant research platform covering meetings, calendars, discussion guides, polls, takeaways, and reporting. Built filtered data listings and cached server state with React Query, Redux, and Axios, and integrated AI APIs for transcript analysis, keyword extraction, sentiment analysis, and research insights.",
+      "stack": [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "React Query",
+        "Redux",
+        "Axios",
+        "Node.js",
+        "NestJS",
+        "PostgreSQL"
+      ],
+      "role": "Frontend & Backend Engineer",
+      "year": "2024 — 2026",
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
       "id": "enterprise-ticketing",
       "title": "Enterprise Ticketing & Asset Management",
       "subtitle": "Multi-tenant SaaS platform for enterprise IT operations",
-      "description": "A multi-tenant SaaS platform handling ticketing, asset tracking, workflow automation, and RBAC-based access control for enterprise clients. Built with NestJS, PostgreSQL, Redis, and Socket.IO.",
+      "description": "Contributed to a NestJS CRM and ticketing platform used by multiple enterprise teams. Built configurable forms with inputs, dropdowns, and radio buttons, developed ticket and workflow REST APIs, and integrated LDAP authentication and Google OAuth.",
       "stack": [
         "NestJS",
-        "React.js",
-        "PostgreSQL",
-        "Redis",
-        "Socket.IO",
-        "Bull",
-        "JWT",
+        "REST APIs",
+        "LDAP",
+        "Google OAuth",
         "TypeScript"
       ],
-      "role": "Full Stack Engineer",
+      "role": "Backend Developer",
       "year": "2024",
       "link": "",
       "image": "",
       "highlight": true
     },
     {
-      "id": "marketing-research-saas",
-      "title": "Marketing Research SaaS Platform",
-      "subtitle": "Multi-tenant workspace for research teams",
-      "description": "A multi-tenant marketing research platform where organisations manage their own workspace, users, projects, and studies. Built SSR-enabled Next.js pages with meeting, calendar, polls, and takeaway interfaces.",
+      "id": "commerce-platforms",
+      "title": "Commerce Platforms — NextME / Rockana",
+      "subtitle": "E-commerce and customer management systems",
+      "description": "Built shopping and construction-materials trading features for NextME and Rockana, including admin dashboards, pricing modules, authentication, and cross-platform mobile features. Shipped 10+ mobile releases using React Native and Firebase Authentication.",
       "stack": [
-        "Next.js",
         "React.js",
-        "Redux",
-        "TypeScript",
+        "React Native",
+        "NestJS",
         "PostgreSQL",
-        "NestJS"
+        "Firebase"
       ],
-      "role": "Frontend & Backend Engineer",
-      "year": "2024",
+      "role": "Full Stack Developer",
+      "year": "2023",
       "link": "",
       "image": "",
-      "highlight": true
+      "highlight": false
+    },
+    {
+      "id": "abu-dhabi-finance-week",
+      "title": "Abu Dhabi Finance Week Mobile Application",
+      "subtitle": "Onboarding, authentication, and mobile ticketing",
+      "description": "Implemented onboarding, login, and mobile ticketing screens using React Native, integrating ticketing workflows with the web platform and backend APIs.",
+      "stack": [
+        "React Native",
+        "REST APIs"
+      ],
+      "role": "Mobile Developer",
+      "year": "",
+      "link": "",
+      "image": "",
+      "highlight": false
     },
     {
       "id": "travel-crm",
       "title": "Travel CRM",
       "subtitle": "Itinerary and customer workflow management",
-      "description": "Full-stack CRM for travel operations — itinerary management, dynamic scheduling, customer workflows, and package management with reusable UI components and API integrations.",
+      "description": "Developed itinerary management, client communication, and travel operations features, with reusable React interfaces and backend API integrations.",
       "stack": [
         "React.js",
         "NestJS",
@@ -186,30 +254,12 @@
       "id": "kenya-airways",
       "title": "Kenya Airways — Staff Booking Portal",
       "subtitle": "Internal booking and scheduling system",
-      "description": "Staff-facing portal for Kenya Airways with booking workflows, scheduling features, and optimised relational database interactions for operational reliability.",
+      "description": "Built staff flight-booking features using React.js, NestJS, Oracle, and a flight-booking engine integration.",
       "stack": [
         "React.js",
         "NestJS",
-        "PostgreSQL",
+        "Oracle",
         "TypeScript"
-      ],
-      "role": "Full Stack Developer",
-      "year": "2023",
-      "link": "",
-      "image": "",
-      "highlight": false
-    },
-    {
-      "id": "commerce-platforms",
-      "title": "Commerce Platforms — NextME / Rockana",
-      "subtitle": "E-commerce and customer management systems",
-      "description": "Frontend modules, backend APIs, and database integrations for commerce and customer management. Covered product listings, order workflows, and customer operations.",
-      "stack": [
-        "React.js",
-        "React Native",
-        "NestJS",
-        "PostgreSQL",
-        "Firebase"
       ],
       "role": "Full Stack Developer",
       "year": "2023",
@@ -227,5 +277,13 @@
       "gpa": "6.81"
     }
   ],
-  "testimonials": []
+  "testimonials": [],
+  "certifications": [
+    "Claude with Google Cloud's Vertex AI",
+    "Model Context Protocol: Advanced Topics",
+    "AI Literacy",
+    "Hands-On Introduction: Python",
+    "Data Analysis Using Python",
+    "Web Development Fundamentals"
+  ]
 }

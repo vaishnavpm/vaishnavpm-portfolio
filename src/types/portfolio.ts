@@ -66,5 +66,6 @@ export interface Portfolio {
   experience: ExperienceItem[]
   projects: ProjectItem[]
   education: EducationItem[]
+  certifications: string[]
   testimonials: unknown[]
 }

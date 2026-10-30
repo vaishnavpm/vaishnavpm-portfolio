@@ -19,7 +19,7 @@ All portfolio content lives in one file:
 src/data/portfolio.json
 ```
 
-Edit that file to update your name, bio, experience, skills, projects, and social links. No code changes needed. Fields with empty strings (`""`) are automatically hidden from the UI.
+Edit that file to update your name, bio, experience, skills, projects, education, certifications, and social links. Replace `public/resume.pdf` to update the downloadable resume. Fields with empty strings (`""`) are automatically hidden from the UI.
 
 ### Key fields
 
@@ -42,7 +42,7 @@ Edit that file to update your name, bio, experience, skills, projects, and socia
 
 | Variable | Purpose |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | Sets the canonical URL in OG tags (e.g. `https://vaishnavpm.dev`). Defaults to `http://localhost:3000` if not set. |
+| `NEXT_PUBLIC_SITE_URL` | Sets the site URL in OG tags (e.g. `https://vaishnavpm.dev`). Defaults to `https://vaishnavpm-portfolio.vercel.app` if not set. |
 
 Set this in Vercel under **Project Settings → Environment Variables** before deploying if you want correct OG preview links.
 

@@ -10,8 +10,8 @@ const kanit = Kanit({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
-const title = 'Vaishnav P M — Full Stack Engineer'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://vaishnavpm-portfolio.vercel.app'
+const title = `${portfolioData.profile.name} — ${portfolioData.profile.role}`
 const description = portfolioData.profile.tagline
 
 export const metadata: Metadata = {
